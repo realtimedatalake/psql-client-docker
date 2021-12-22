@@ -1,9 +1,9 @@
 # psql-client-docker
 Containerized PostgreSQL client for executing SQL commands in containerized environments
 
-## Use
 The `psql-client` image is stored on Docker Hub in the [rtdl/psql-client repository](https://hub.docker.com/r/rtdl/psql-client).
 
+## Use
 This image is not interactive and has no default ENTRYPOINT. You can use the `entrypoint` option to execute psql commands and `volumes` to load scripts that can be executed with the psql client.
 **Docker Run example**
 ```
