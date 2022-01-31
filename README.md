@@ -3,9 +3,13 @@ Containerized PostgreSQL client for executing SQL commands in containerized envi
 
 The `psql-client` image is stored on Docker Hub in the [rtdl/psql-client repository](https://hub.docker.com/r/rtdl/psql-client).
 
-## Use
+## rtdl - The Real-Time Data Lake
+This is a sub-project of [rtdl](https://github.com/realtimedatalake/rtdl) – the real-time 
+data lake. Please go to rtdl's repo and give it a star.
+
+## How to use
 This image is not interactive and has no default ENTRYPOINT. You can use the `entrypoint` option to execute psql commands and `volumes` to load scripts that can be executed with the psql client.
-**Docker Run example**
+### Docker Run example
 ```
 docker run --name psql-client \
 -v ${PWD}/catalog/scripts/create-user-db.postgres.sql:/create-user-db.postgres.sql \
@@ -14,7 +18,7 @@ rtdl/psql-client:latest \
 -h dbhost -p 5433 -U postgres -f /create-user-db.postgres.sql
 ```
 
-**Docker Compose example**
+### Docker Compose example
 ```
 psql-client:
   image: rtdl/psql-client:latest
